@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hubtel.IntermediateCodingChallenge.Api", "Hubtel.IntermediateCodingChallenge.Api\Hubtel.IntermediateCodingChallenge.Api.csproj", "{E3A4D4AF-97A9-4B80-9115-6C0D9FF81D92}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hubtel.IntermediateCodingChallenge.Api.Test", "Hubtel.IntermediateCodingChallenge.Api.Test\Hubtel.IntermediateCodingChallenge.Api.Test.csproj", "{45A3BF3D-F6AC-45FD-A070-C64F164D30D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{E3A4D4AF-97A9-4B80-9115-6C0D9FF81D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3A4D4AF-97A9-4B80-9115-6C0D9FF81D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3A4D4AF-97A9-4B80-9115-6C0D9FF81D92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45A3BF3D-F6AC-45FD-A070-C64F164D30D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45A3BF3D-F6AC-45FD-A070-C64F164D30D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45A3BF3D-F6AC-45FD-A070-C64F164D30D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45A3BF3D-F6AC-45FD-A070-C64F164D30D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
