@@ -1,8 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hubtel.IntermediateCodingChallenge.Api", "Hubtel.IntermediateCodingChallenge.Api\Hubtel.IntermediateCodingChallenge.Api.csproj", "{E3A4D4AF-97A9-4B80-9115-6C0D9FF81D92}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A82956B9-429E-4DCD-B11E-D6FF7A648830}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hubtel.IntermediateCodingChallenge.Api.Test", "Hubtel.IntermediateCodingChallenge.Api.Test\Hubtel.IntermediateCodingChallenge.Api.Test.csproj", "{45A3BF3D-F6AC-45FD-A070-C64F164D30D7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{4B251CA7-DEE3-45C2-9C99-878142548039}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hubtel.IntermediateCodingChallenge.Api", "src\Hubtel.IntermediateCodingChallenge.Api\Hubtel.IntermediateCodingChallenge.Api.csproj", "{4CA1F21D-0590-4878-BB6D-76B0335FA5BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hubtel.IntermediateCodingChallenge.Api.Test", "test\Hubtel.IntermediateCodingChallenge.Api.Test\Hubtel.IntermediateCodingChallenge.Api.Test.csproj", "{0FB5177D-439E-48A3-86F6-EFFEF89944F7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4CA1F21D-0590-4878-BB6D-76B0335FA5BA} = {4CA1F21D-0590-4878-BB6D-76B0335FA5BA}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,13 +20,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E3A4D4AF-97A9-4B80-9115-6C0D9FF81D92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E3A4D4AF-97A9-4B80-9115-6C0D9FF81D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E3A4D4AF-97A9-4B80-9115-6C0D9FF81D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E3A4D4AF-97A9-4B80-9115-6C0D9FF81D92}.Release|Any CPU.Build.0 = Release|Any CPU
-		{45A3BF3D-F6AC-45FD-A070-C64F164D30D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{45A3BF3D-F6AC-45FD-A070-C64F164D30D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{45A3BF3D-F6AC-45FD-A070-C64F164D30D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{45A3BF3D-F6AC-45FD-A070-C64F164D30D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CA1F21D-0590-4878-BB6D-76B0335FA5BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CA1F21D-0590-4878-BB6D-76B0335FA5BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CA1F21D-0590-4878-BB6D-76B0335FA5BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CA1F21D-0590-4878-BB6D-76B0335FA5BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FB5177D-439E-48A3-86F6-EFFEF89944F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FB5177D-439E-48A3-86F6-EFFEF89944F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FB5177D-439E-48A3-86F6-EFFEF89944F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FB5177D-439E-48A3-86F6-EFFEF89944F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4CA1F21D-0590-4878-BB6D-76B0335FA5BA} = {A82956B9-429E-4DCD-B11E-D6FF7A648830}
+		{0FB5177D-439E-48A3-86F6-EFFEF89944F7} = {4B251CA7-DEE3-45C2-9C99-878142548039}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0334287D-2D7C-44DA-A566-053CF9657951}
 	EndGlobalSection
 EndGlobal

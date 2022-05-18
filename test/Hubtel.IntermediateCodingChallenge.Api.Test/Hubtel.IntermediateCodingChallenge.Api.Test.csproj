@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -14,7 +14,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Hubtel.IntermediateCodingChallenge.Api\Hubtel.IntermediateCodingChallenge.Api.csproj" />
+      <ProjectReference Include="..\..\src\Hubtel.IntermediateCodingChallenge.Api\Hubtel.IntermediateCodingChallenge.Api.csproj" />
     </ItemGroup>
+
+    
 
 </Project>
