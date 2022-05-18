@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Hubtel.IntermediateCodingChallenge.Api.Models;
 using Microsoft.AspNetCore.Http;
@@ -12,7 +13,7 @@ namespace Hubtel.IntermediateCodingChallenge.Api.Controllers
     public class SmsController : ControllerBase
     {
         private readonly ILogger<SmsController> _logger;
-        private readonly int _maxBatchSize = 5000;
+        private readonly int _maxBatchSize = 5000; // do not change the batch size
 
         public SmsController(ILogger<SmsController> logger)
         {
@@ -38,17 +39,21 @@ namespace Hubtel.IntermediateCodingChallenge.Api.Controllers
                 var batchId = Guid.NewGuid().ToString();
 
                 //todo: test point for null reference
+                var tasks = new List<Task>();
                 foreach (var contact in request.Contacts)
                 {
-                    await SendSms(new SubmitSmsRequest
+                    tasks.Add(SendSms(new SubmitSmsRequest
                     {
                         From = request.From,
                         Content = request.Content,
                         To = contact,
                         MessageId = Guid.NewGuid().ToString(),
                         BatchId = batchId
-                    });
+                    }));
                 }
+
+                await Task.WhenAll(tasks);
+                
                 _logger.LogInformation("successfully processed batch {batch_id}", batchId);
                 return Ok(new SmsResponse
                 {
