@@ -10,11 +10,12 @@ using Microsoft.Extensions.Logging;
 namespace Hubtel.IntermediateCodingChallenge.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/sms")]
     public class SmsController : ControllerBase
     {
 
         private readonly ILogger<SmsController> _logger;
+        private int _maxBatchSize = 5;
 
         public SmsController(ILogger<SmsController> logger)
         {
@@ -26,15 +27,34 @@ namespace Hubtel.IntermediateCodingChallenge.Api.Controllers
         {
             try
             {
-                return Ok(new
+                if (request.Contacts.Length > _maxBatchSize)
                 {
-                    batchId = Guid.NewGuid().ToString()
+                    _logger.LogError("invalid batch size. maximum limit is {batch_size}", _maxBatchSize);
+
+                    return BadRequest(new SmsResponse
+                    {
+                        Status = StatusCodes.Status400BadRequest,
+                        Message = $"invalid batch size. maximum limit is {_maxBatchSize}"
+                    });
+                }
+
+                var batchId = Guid.NewGuid().ToString();
+                
+                _logger.LogInformation("successfully processed batch {batch_id}", batchId);
+                return Ok(new SmsResponse
+                {
+                    BatchId = batchId,
+                    Message = "request successfully submitted"
                 });
             }
             catch (Exception e)
             {
                 _logger.LogError("exception {error}", e.Message);
-                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+                return StatusCode(StatusCodes.Status500InternalServerError, new SmsResponse
+                {
+                    Status = StatusCodes.Status500InternalServerError,
+                    Message = "oops.. request cannot be processed!"
+                });
             }
         }
     }
