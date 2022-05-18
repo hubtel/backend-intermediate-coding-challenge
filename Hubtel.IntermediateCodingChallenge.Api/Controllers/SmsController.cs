@@ -11,9 +11,8 @@ namespace Hubtel.IntermediateCodingChallenge.Api.Controllers
     [Route("api/sms")]
     public class SmsController : ControllerBase
     {
-
         private readonly ILogger<SmsController> _logger;
-        private int _maxBatchSize = 5000;
+        private readonly int _maxBatchSize = 5000;
 
         public SmsController(ILogger<SmsController> logger)
         {
@@ -32,12 +31,13 @@ namespace Hubtel.IntermediateCodingChallenge.Api.Controllers
                     return BadRequest(new SmsResponse
                     {
                         Status = StatusCodes.Status400BadRequest,
-                        Message = $"invalid batch size. maximum limit is {_maxBatchSize}"
+                        Message = $"Maximum  batch size exceeded. Allowed size is {_maxBatchSize}"
                     });
                 }
 
                 var batchId = Guid.NewGuid().ToString();
 
+                //todo: test point for null reference
                 foreach (var contact in request.Contacts)
                 {
                     await SendSms(new SubmitSmsRequest
